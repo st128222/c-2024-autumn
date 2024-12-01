@@ -82,25 +82,22 @@ int main(int argc, char* argv[]) {
 		scanf_s("%d", &choice);
 		if (choice == 0){
 			flag = false;
-			break;
 		}
-		if (choice == 1) {
+		else if (choice == 1) {
 			fillArray(arr, len);
 			printArray(arr, len);
-			break;
+			
 		}
-		if (choice == 2) {
+		else if (choice == 2) {
 			fillArray(arr, len); 
 			printArray(arr, len); // array before adding
 			std::cout << "\n";
 			int el = 0;
 			scanf_s("%d", &el);
 			addElementToStart(arr, len, el);
-			printArray(arr, len);
-			break;
-
+			printArray(arr, len);	
 		}
-		if (choice == 3) {
+		else if (choice == 3) {
 			fillArray(arr, len);
 			printArray(arr, len); // array before adding
 			std::cout << "\n";
@@ -108,23 +105,22 @@ int main(int argc, char* argv[]) {
 			scanf_s("%d", &el);
 			addElementToEnd(arr, len, el);
 			printArray(arr, len);
-			break;
+		
 		}
-		if (choice == 4) {
-			fillArray(arr, len);
-			printArray(arr, len); // array before deletion
+		else if (choice == 4) { // array before deletion
 			std::cout << "\n";
 			deleteElementFromStart(arr,len);
 			printArray(arr, len);
-			break;
+		
 		}
-		if (choice == 5) {
+		else if (choice == 5) {
 			fillArray(arr, len);
 			printArray(arr, len); // array before deletion
 			std::cout << "\n";
 			deleteElementFromEnd(arr, len);
 			printArray(arr, len);
-			break;
+			
+			
 		}
 	}
 	return 0;

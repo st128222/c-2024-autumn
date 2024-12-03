@@ -1,7 +1,6 @@
-#include<cstdio>
-#include<cstdlib>
-#include<ctime>
+
 #include<iostream>
+
 void fillArray(int* const arr, const int len) {
 	for (int i = 0; i < len; i++) {
 		arr[i] = rand() % 10;
@@ -73,7 +72,9 @@ void printMenu() {
 	printf("5 - delete from end \n");
 }
 int main(int argc, char* argv[]) {
-	int len = 5;
+	int len = 0;
+	std::cout << "Enter array size";
+	scanf_s("%d", &len);
 	int* arr = new int[len];
 	bool flag = true;
 	while (flag) {
@@ -107,7 +108,9 @@ int main(int argc, char* argv[]) {
 			printArray(arr, len);
 		
 		}
-		else if (choice == 4) { // array before deletion
+		else if (choice == 4) { 
+			fillArray(arr, len); // array before deletion
+			printArray(arr, len);
 			std::cout << "\n";
 			deleteElementFromStart(arr,len);
 			printArray(arr, len);
@@ -123,5 +126,5 @@ int main(int argc, char* argv[]) {
 			
 		}
 	}
-	return 0;
+	return EXIT_SUCCESS;
 }
